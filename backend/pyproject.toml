@@ -1,0 +1,13 @@
+[tool.ruff]
+line-length = 110
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I"]
+ignore = [
+    "E501",  # line length handled by formatter/line-length setting
+]
+
+[tool.ruff.lint.per-file-ignores]
+"alembic/*" = ["F401", "E402"]
+"app/routers/*" = ["B008"]  # Depends(...) as a default arg is the standard FastAPI pattern
